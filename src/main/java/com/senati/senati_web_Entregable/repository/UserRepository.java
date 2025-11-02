@@ -1,6 +1,6 @@
-package com.senati.senati_web_casafranca.repository;
+package com.senati.senati_web_Entregable.repository;
 
-import com.senati.senati_web_casafranca.model.User;
+import com.senati.senati_web_Entregable.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

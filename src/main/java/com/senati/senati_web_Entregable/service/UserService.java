@@ -1,8 +1,8 @@
-package com.senati.senati_web_casafranca.service;
+package com.senati.senati_web_Entregable.service;
 
-import com.senati.senati_web_casafranca.model.Response;
-import com.senati.senati_web_casafranca.model.User;
-import com.senati.senati_web_casafranca.repository.UserRepository;
+import com.senati.senati_web_Entregable.model.Response;
+import com.senati.senati_web_Entregable.model.User;
+import com.senati.senati_web_Entregable.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

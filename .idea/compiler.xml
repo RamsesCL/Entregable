@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="senati-web-casafranca" />
+        <module name="senati-web-Entregable" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="senati-web-casafranca" options="-parameters" />
+      <module name="senati-web-Entregable" options="-parameters" />
     </option>
   </component>
 </project>

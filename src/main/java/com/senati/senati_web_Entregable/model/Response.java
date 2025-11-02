@@ -1,4 +1,4 @@
-package com.senati.senati_web_casafranca.model;
+package com.senati.senati_web_Entregable.model;
 
 public class Response {
     private int code;
