@@ -16,13 +16,17 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
+    // ✅ Listar todos
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
+    // ✅ Agregar nuevo
     public ResponseEntity<User> newUser(User user) {
-        return new ResponseEntity<>(userRepository.save(user), HttpStatus.OK);
+        return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
     }
+
+    // ✅ Actualizar
     public ResponseEntity<User> updateUser(Integer id, User updatedUser) {
         Optional<User> optionalUser = userRepository.findById(id);
 
@@ -32,20 +36,24 @@ public class UserService {
             existingUser.setLastname(updatedUser.getLastname());
             return new ResponseEntity<>(userRepository.save(existingUser), HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);}
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
+
+    // ✅ Eliminar usuario
     public Response deleteUser(int id) {
-        Optional<User> optionalUser = userRepository.findById(id);
         Response response = new Response();
+        Optional<User> optionalUser = userRepository.findById(id);
 
         if (optionalUser.isPresent()) {
-            
-            response.setMessage("El usuario con id: "+ id + "se ha limpiado correctamente");
-            return response;
+            userRepository.deleteById(id);
+            response.setMessage("Usuario con ID " + id + " eliminado correctamente.");
+        } else {
+            response.setCode(404);
+            response.setStatus("Error");
+            response.setMessage("No se encontró el usuario con ID " + id);
         }
-        response.setCode(404);
-        response.setStatus("Error");
-        response.setMessage("No se puede eliminar al usuario");
+
         return response;
     }
 }
